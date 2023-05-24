@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://mariadb:3306/cinema
+    username: root
+    password: root
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
