@@ -1,0 +1,21 @@
+name: Deploy to Pre-prod
+
+on:
+  workflow_run:
+    workflows: ["Acceptence tests"]
+    types:
+      - completed
+
+jobs:
+  deploy-to-pre-prod:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clean env after old Pre-prod
+        run: echo "Clean env after old Pre-prod"
+
+      - name: Set up new env for Pre-prod
+        run: echo "Set up new env for Pre-prod"
+
+      - name: Deploy to Pre-prod env
+        run: echo "Service was deployed to PrePROD env"

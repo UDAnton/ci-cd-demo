@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build
 
 on:
   push:
@@ -27,22 +27,3 @@ jobs:
 
       - name: Build Docker image
         run: docker build .
-
-  acceptence-tests:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Run acceptence tests
-        run: echo "Acceptence tests"
-
-  deploy:
-    needs: acceptence-tests
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to Pre-prod env
-        run: echo "Service was deployed to PrePROD env"
-
-      - name: Deploy to prod env
-        run: echo "Service was deployed to PROD env"

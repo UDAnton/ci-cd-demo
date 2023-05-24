@@ -1,0 +1,21 @@
+name: Acceptence tests
+
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - completed
+
+jobs:
+  acceptence-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up env for acceptence tests
+        run: echo "Set up env for acceptence tests"
+
+      - name: Run acceptence tests
+        run: echo "Run acceptence tests"
+
+      - name: Clean env after acceptence tests
+        run: echo "Clean env after acceptence tests"
